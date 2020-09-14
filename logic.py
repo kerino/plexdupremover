@@ -82,7 +82,7 @@ class Logic(object):
     def scheduler_start():
         try:
             logger.debug('PDR Scheduler start!')
-            job = Job(package_name, package_name, ModelSetting.get('interval'), Logic.scheduler_function, u"%s 설명" % package_name, False)
+            job = Job(package_name, package_name, ModelSetting.get('interval'), Logic.scheduler_function, u"PLEX 중복 파일 삭제", False)
             scheduler.add_job_instance(job)
         except Exception as e: 
             logger.error('Exception:%s', e)
