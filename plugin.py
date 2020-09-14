@@ -35,9 +35,9 @@ menu = {
  
 ## 설정 - 플러그인 에서 보여줄 정보를 포함하고 있습니다.
 plugin_info = {
-    'version' : '0.1.0.0',
+    'version' : '0.1.0.1',
     'name' : 'PLEX DUP Remover',
-    'category_name' : 'service',
+    'category_name' : 'plex',
     'developer' : 'kerino',
     'description' : 'PLEX 중복 파일 삭제',
     'home' : 'https://github.com/kerino/plexdupremover',
