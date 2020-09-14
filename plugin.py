@@ -35,7 +35,7 @@ menu = {
  
 ## 설정 - 플러그인 에서 보여줄 정보를 포함하고 있습니다.
 plugin_info = {
-    'version' : '0.1.0.1',
+    'version' : '0.1.0.2',
     'name' : 'PLEX DUP Remover',
     'category_name' : 'plex',
     'developer' : 'kerino',
