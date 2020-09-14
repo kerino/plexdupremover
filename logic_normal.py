@@ -241,23 +241,20 @@ class LogicNormal(object):
 
     @staticmethod
     def delete_item(item):
-        logger.debug('Delete item!!!')
-        logger.debug(item)
         try:
             delete_url = urljoin(ModelSetting.get('plex_server'), '%s/media/%d' % (item['show_key'], item['id']))
             ModelItem.save_as_dict(item)
             if requests.delete(delete_url, headers={'X-Plex-Token': ModelSetting.get('plex_token')}).status_code == 200:
-                logger.debug("\t\tDeleted media item: %r" % item['id'])
+                logger.debug("\t\tDeleted media item: %r" % item['file'][0])
             else:
-                logger.debug("\t\tError deleting media item: %r" % item['id'])
+                logger.debug("\t\tError deleting media item: %r" % ['file'][0])
         except Exception as e:
             logger.error('Exception:%s', e)
             logger.error(traceback.format_exc())
 
     @staticmethod
     def move_item(item):
-        logger.debug('Move item to %s!!!', ModelSetting.get('move_path'))
-        logger.debug(item)
+        logger.debug('Move media item : %s to %s ', item['file'][0], ModelSetting.get('move_path'))
         try:
             celery_shutil.move(item['file'][0], ModelSetting.get('move_path'))
             ModelItem.save_as_dict(item)
