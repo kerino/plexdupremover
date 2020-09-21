@@ -57,7 +57,7 @@ def plugin_unload():
 ## /package_name 으로만 접속할 때 어느 sub 화면으로 보낼지 설정합니다. 
 @blueprint.route('/')
 def home():
-    return redirect('/%s/setting' % package_name)
+    return redirect('/%s/list' % package_name)
  
 ## 메뉴가 클릭되었을때 어떤 정보를 가공하여 어떤 html 페이지를 보여줄지 선택합니다.
 @blueprint.route('/<sub>')
